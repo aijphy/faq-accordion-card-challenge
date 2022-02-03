@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="background">
+        <div class="container">
+          <div class="desktoppics">
+            <div class="piccontainer">
+              <img
+                class="mobpic"
+                src="images/illustration-woman-online-mobile.svg"
+                alt=""
+              />
+            </div>
+            <img
+              class="despic"
+              src="images/illustration-woman-online-desktop.svg"
+              alt=""
+            />
+          </div>
+          <img
+            class="desbox"
+            id="desbox"
+            src="images/illustration-box-desktop.svg"
+            alt=""
+          />
+          <div class="faqs">
+            <div class="faqtitle">FAQ</div>
+            <div onclick="changeColor(1)" class="qu1" id="qu1">
+              <h1 id="hq1">
+                How many team members can I invite?
+
+                <img id="i1" src="images/icon-arrow-down.svg" alt="" />
+              </h1>
+              <p id="p1">
+                You can invite up to 2 additional users on the Free plan. There
+                is no limit on team members for the Premium plan.
+              </p>
+            </div>
+            <div onclick="changeColor(2)" class="qu2" id="qu2">
+              <h1 id="hq2">
+                What is the maximum file upload size?
+
+                <img id="i2" src="images/icon-arrow-down.svg" alt="" />
+              </h1>
+              <p id="p2" class="p2">
+                No more than 2GB. All files in your account must fit your
+                allotted storage space.
+              </p>
+            </div>
+            <div onclick="changeColor(3)" class="qu3" id="qu3">
+              <h1 id="hq3">
+                How do I reset my password?
+                <img id="i3" src="images/icon-arrow-down.svg" alt="" />
+              </h1>
+              <p id="p3" class="p3">
+                Click “Forgot password” from the login page or “Change password”
+                from your profile page. A reset link will be emailed to you.
+              </p>
+            </div>
+            <div onclick="changeColor(4)" class="qu4">
+              <h1 id="hq4">
+                Can I cancel my subscription?
+                <img id="i4" src="images/icon-arrow-down.svg" alt="" />
+              </h1>
+              <p id="p4">
+                Yes! Send us a message and we’ll process your request no
+                questions asked.
+              </p>
+            </div>
+            <div onclick="changeColor(5)" class="qu5">
+              <h1 id="hq5">
+                Do you provide additional support?
+                <img id="i5" src="images/icon-arrow-down.svg" alt="" />
+              </h1>
+              <p id="p5">
+                Chat and email support is available 24/7. Phone lines are open
+                during normal business hours.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Alex Johnson</a>.
+      </div>
+    </footer>
+  </body>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="apps.js" charset="utf-8"></script>
+</html>

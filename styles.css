@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --Desaturate-blue: hsl(238, 29%, 16%);
+  --Soft-red: hsl(14, 88%, 65%);
+
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+  --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Dark-grayish-blue: hsl(240, 6%, 50%);
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+}
+main {
+  height: 100%;
+  margin: 0;
+}
+
+/* provide background coloring, this seems to break for really tall or wide screens, may be worth fixing*/
+html {
+  background-image: linear-gradient(var(--Soft-violet), var(--Soft-blue));
+  background-size: 100% 100%;
+}
+
+/*extra padding to contain main app*/
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding-bottom: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main fq container */
+.container {
+  border-radius: 1.5rem;
+  margin-top: 40%;
+  width: 80%;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: 100% 20%;
+  background-repeat: no-repeat;
+
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+
+  background-color: white;
+  padding-bottom: 10%;
+}
+
+/*contain the illustration in mobile format+ the background*/
+.piccontainer {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  right: 0;
+  background-image: url("images/bg-pattern-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: 100% 70%;
+  width: 80%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20%;
+  margin-bottom: 0%;
+}
+/*make the mobile illustration visible and place correctly*/
+.mobpic {
+  opacity: 1;
+  margin-top: -45%;
+  width: 100%;
+}
+/*make the desktop illustrations invisible*/
+.despic {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.desbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/*larger text header FAQ*/
+.faqtitle {
+  margin-top: -5%;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 5%;
+}
+/*flex container for FAQ questions/answers*/
+.faqs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* size/place the questions + arrows + hover*/
+.container h1 {
+  font-weight: 700;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--Dark-grayish-blue);
+}
+/*use important to keep hover color from chaning in js. Maybe there is a better way?*/
+h1[id*="hq"]:hover {
+  color: var(--Soft-red) !important;
+}
+/* give all faqs some extra space*/
+div[class*="qu"] {
+  width: 80%;
+}
+
+/*size the arrows*/
+h1 img {
+  width: 10px;
+  height: 7px;
+}
+/*define initial state of answers*/
+.container p {
+  font-weight: 400;
+  max-height: 0;
+  color: transparent;
+  border-width: 0;
+  border-bottom-width: 2px;
+  border-color: var(--Light-grayish-blue);
+  border-style: solid;
+  padding-bottom: 10px;
+}
+
+/*
+responsive for mobile devices
+*/
+@media (min-width: 1000px) {
+  /* adjust padding around main app*/
+  .background {
+    padding-top: 25vh;
+    padding-bottom: 25vh;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  /* swictch to desktop layout*/
+  .container {
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    width: 800px;
+    height: 400px;
+  }
+  /* switch to desktop pics, hide the mobile illustrations*/
+  .desktoppics {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .piccontainer {
+    position: absolute;
+    height: 650px;
+    width: 775px;
+    left: -450px;
+    bottom: 0px;
+    margin: 0;
+    padding: 0;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-size: cover;
+  }
+  .mobpic {
+    position: static;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .despic {
+    position: absolute;
+    opacity: 1;
+    top: 50px;
+    height: 300px;
+    width: 400px;
+    left: -75px;
+    overflow: hidden;
+  }
+  .desbox {
+    position: absolute;
+    opacity: 1;
+    top: 160px;
+    left: -75px;
+    height: 150px;
+    width: 150px;
+  }
+
+  /*reposition faqs/title*/
+  .faqs {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding-top: 5px;
+    height: 380px;
+    overflow: hidden;
+  }
+  .faqtitle {
+    position: relative;
+    padding-bottom: 10px;
+    margin: 0;
+    margin-top: 2%;
+    text-align: left;
+  }
+}
